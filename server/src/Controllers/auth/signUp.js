@@ -4,7 +4,7 @@ const { failCode, successCode, errorCode } = require("../../config/reponse");
 const bcrypt = require("bcrypt");
 const signUp = async (req, res) => {
   try {
-    const { username, first_name, last_name, email, password, phone } =
+    const { user_name, first_name, last_name, email, password, phone } =
       req.body;
     // Kiểm tra nếu email đã tồn tại trong hệ thống
     const checkEmail = await User.findOne({ email });
@@ -15,7 +15,7 @@ const signUp = async (req, res) => {
     const userRole = await Role.findOne({ role_name: "user" });
     // Tạo người dùng mới và lưu vào database
     const user = await User.create({
-      username,
+      user_name,
       first_name,
       last_name,
       email,

@@ -5,7 +5,7 @@ import { CallSignUp } from "../../redux/reducers/auth/signUp"; // Đảm bảo C
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
-    username: "",
+    user_name: "",
     first_name: "",
     last_name: "",
     email: "",
@@ -36,7 +36,7 @@ export default function SignUp() {
     }
 
     const res = await CallSignUp({
-      username: formData.username,
+      user_name: formData.user_name,
       first_name: formData.first_name,
       last_name: formData.last_name,
       email: formData.email,
@@ -79,27 +79,27 @@ export default function SignUp() {
         <div className="mb-4">
           <label>Tên đăng nhập:</label>
           <input
-            name="username"
+            name="user_name"
             type="text"
-            value={formData.username}
+            value={formData.user_name}
             onChange={handleChange}
             placeholder="Nhập tên đăng nhập"
             className="w-full px-3 py-2 border-3 border-yellow-300 rounded focus:outline-none focus:ring focus:border-red-300"
           />
         </div>
         <div className="mb-4">
-          <label for="first_name">first_name</label>
+          <label for="first_name">First Name</label>
           <input
             name="first_name"
             type="text"
-            value={formData.first_name}
+            value={formData.firstname}
             onChange={handleChange}
             placeholder="Nhập first_name"
             className="w-full px-3 py-2 border-3 border-yellow-300 rounded focus:outline-none focus:ring focus:border-red-300"
           />
         </div>
         <div className="mb-4">
-          <label for="last_name">last_name:</label>
+          <label for="last_name">Last Name:</label>
           <input
             name="last_name"
             type="text"
@@ -110,7 +110,7 @@ export default function SignUp() {
           />
         </div>
         <div className="mb-4">
-          <label for="email">email</label>
+          <label>Email</label>
           <input
             name="email"
             type="email"
@@ -121,7 +121,7 @@ export default function SignUp() {
           />
         </div>
         <div className="mb-4">
-          <label>password</label>
+          <label>Password</label>
           <input
             name="password"
             type="password"
@@ -132,7 +132,7 @@ export default function SignUp() {
           />
         </div>
         <div className="mb-4">
-          <label>Xác Nhận password</label>
+          <label>Xác Nhận Password</label>
           <input
             name="confirmpassword"
             type="password"
@@ -143,7 +143,7 @@ export default function SignUp() {
           />
         </div>
         <div className="mb-4">
-          <label for="phone">phone</label>
+          <label for="phone">Phone</label>
           <input
             name="phone"
             type="number"

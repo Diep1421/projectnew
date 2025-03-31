@@ -4,12 +4,12 @@ const { failCode, successCode, errorCode } = require("../../config/reponse");
 const updateUser = async (req, res) => {
   try {
     const { id } = req.params; // Lấy id từ params
-    const { username, first_name, last_name, email, phone, password, role } =
+    const { user_name, first_name, last_name, email, phone, password, role } =
       req.body;
     const user = await User.findOneAndUpdate(
       { _id: id },
       {
-        username,
+        user_name,
         first_name,
         last_name,
         email,
